@@ -5,6 +5,8 @@ import { AboutComponent }      from './about/about.component';
 import { DashboardComponent }   from './dashboard/dashboard.component';
 import { HeroDetailComponent }  from './hero-detail/hero-detail.component';
 import { ContactDetailsComponent } from './contact-details/contact-details.component';
+import { PricingComponent }      from './pricing/pricing.component';
+
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
@@ -12,6 +14,7 @@ const routes: Routes = [
   { path: 'heroes', component: HeroesComponent },
   { path: 'about', component: AboutComponent },
   { path: 'contact-details', component: ContactDetailsComponent },
+  { path: 'pricing', component: PricingComponent },
   { path: 'detail/:id', component: HeroDetailComponent }
 ];
 

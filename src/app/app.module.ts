@@ -17,6 +17,7 @@ import { HeroSearchComponent }  from './hero-search/hero-search.component';
 import { MessagesComponent }    from './messages/messages.component';
 import { ContactDetailsComponent } from './contact-details/contact-details.component';
 import { MapComponent } from './map/map.component';
+import { PricingComponent } from './pricing/pricing.component';
 
 @NgModule({
   imports: [
@@ -41,7 +42,8 @@ import { MapComponent } from './map/map.component';
     MessagesComponent,
     HeroSearchComponent,
     ContactDetailsComponent,
-    MapComponent
+    MapComponent,
+    PricingComponent
   ],
   bootstrap: [ AppComponent ]
 })
