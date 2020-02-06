@@ -1,5 +1,6 @@
 import { InMemoryDbService } from 'angular-in-memory-web-api';
-import { Hero } from './hero';
+import { Hero } from '../../modals/hero';
+import { ContactFormSubmission } from '../../modals/contact-form-submission';
 
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
@@ -15,7 +16,15 @@ export class InMemoryDataService implements InMemoryDbService {
       { id: 19, name: 'Magma' },
       { id: 20, name: 'Tornado' }
     ];
-    return {heroes};
+
+    const contactFormSubmissions = [
+      {id: 1, name: 'Mr. Pink', email: 'mrpink@gmail.com', message: 'asdno sdifnasid asdfn'}
+    ];
+
+    return {
+      heroes,
+      contactFormSubmissions
+    };
   }
 
   // Overrides the genId method to ensure that a hero always has an id.

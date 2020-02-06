@@ -4,7 +4,7 @@ import { FormsModule }    from '@angular/forms';
 import { HttpClientModule }    from '@angular/common/http';
 
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService }  from './in-memory-data.service';
+import { InMemoryDataService }  from './services/in-memory-data-service/in-memory-data.service';
 
 import { AppRoutingModule }     from './app-routing.module';
 
@@ -18,6 +18,7 @@ import { MessagesComponent }    from './messages/messages.component';
 import { ContactDetailsComponent } from './contact-details/contact-details.component';
 import { MapComponent } from './map/map.component';
 import { PricingComponent } from './pricing/pricing.component';
+import { ContactFormComponent } from './contact-form/contact-form.component';
 
 @NgModule({
   imports: [
@@ -43,7 +44,8 @@ import { PricingComponent } from './pricing/pricing.component';
     HeroSearchComponent,
     ContactDetailsComponent,
     MapComponent,
-    PricingComponent
+    PricingComponent,
+    ContactFormComponent
   ],
   bootstrap: [ AppComponent ]
 })
