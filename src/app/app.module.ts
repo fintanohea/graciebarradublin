@@ -9,7 +9,7 @@ import { InMemoryDataService }  from './services/in-memory-data-service/in-memor
 import { AppRoutingModule }     from './app-routing.module';
 
 import { AppComponent }         from './app.component';
-import { DashboardComponent }   from './dashboard/dashboard.component';
+import { HomepageComponent }   from './homepage/homepage.component';
 import { HeroDetailComponent }  from './hero-detail/hero-detail.component';
 import { HeroesComponent }      from './heroes/heroes.component';
 import { AboutComponent }      from './about/about.component';
@@ -36,7 +36,7 @@ import { ContactFormComponent } from './contact-form/contact-form.component';
   ],
   declarations: [
     AppComponent,
-    DashboardComponent,
+    HomepageComponent,
     HeroesComponent,
     AboutComponent,
     HeroDetailComponent,

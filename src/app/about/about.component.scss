@@ -1,0 +1,24 @@
+.about-container {
+  // background-image: ;
+  background: linear-gradient(
+    rgba(20,20,20, .8), 
+    rgba(20,20,20, .8)),
+    url("../../assets/db1.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  padding: 20px;
+
+  h1 {
+    font-style: normal !important;
+    font-weight: 800;
+    text-align: center;
+    color: #ffffff;
+  }
+
+  p {
+    color: #ffffff;
+  }
+}
