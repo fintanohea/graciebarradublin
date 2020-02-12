@@ -1,0 +1,23 @@
+.parallax {
+  /* The image used */
+  background-image: url("../../assets/dublin-city-high.jpg");
+
+  /* Set a specific height */
+  height: 100vh;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  position: relative;
+
+  .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80vh;
+    padding-top: 25vh;
+  }
+}
+
