@@ -19,6 +19,7 @@ import { ContactDetailsComponent } from './contact-details/contact-details.compo
 import { MapComponent } from './map/map.component';
 import { PricingComponent } from './pricing/pricing.component';
 import { ContactFormComponent } from './contact-form/contact-form.component';
+import { InstructorComponent } from './instructor/instructor.component';
 
 @NgModule({
   imports: [
@@ -45,7 +46,8 @@ import { ContactFormComponent } from './contact-form/contact-form.component';
     ContactDetailsComponent,
     MapComponent,
     PricingComponent,
-    ContactFormComponent
+    ContactFormComponent,
+    InstructorComponent
   ],
   bootstrap: [ AppComponent ]
 })
