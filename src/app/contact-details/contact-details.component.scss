@@ -1,0 +1,30 @@
+.contact-details-container {
+    color: #222222 !important;
+    font-weight: bold;
+    padding: 20px;
+    margin: 20px 0px 20px 0px;
+
+    h1, h3, h4, h5 {
+        font-weight: 700;
+    }
+}
+
+a:link {
+    text-decoration: none;
+    color: #222222;
+}
+
+a:visited {
+    text-decoration: none;
+    color: #222222;
+}
+
+a:hover {
+    text-decoration: none;
+    color:  #991b1e !important;
+}
+
+a:active {
+    text-decoration: underline;
+    color:  #991b1e !important;
+}
