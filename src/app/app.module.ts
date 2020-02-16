@@ -20,6 +20,7 @@ import { MapComponent } from './map/map.component';
 import { PricingComponent } from './pricing/pricing.component';
 import { ContactFormComponent } from './contact-form/contact-form.component';
 import { InstructorComponent } from './instructor/instructor.component';
+import { NavMenuComponent } from './nav-menu/nav-menu.component';
 
 @NgModule({
   imports: [
@@ -47,7 +48,8 @@ import { InstructorComponent } from './instructor/instructor.component';
     MapComponent,
     PricingComponent,
     ContactFormComponent,
-    InstructorComponent
+    InstructorComponent,
+    NavMenuComponent
   ],
   bootstrap: [ AppComponent ]
 })

@@ -7,7 +7,6 @@ import { HeroDetailComponent }  from './hero-detail/hero-detail.component';
 import { ContactDetailsComponent } from './contact-details/contact-details.component';
 import { PricingComponent }      from './pricing/pricing.component';
 
-
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomepageComponent },
@@ -19,7 +18,11 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [ RouterModule.forRoot(routes) ],
+  imports: [ RouterModule.forRoot(routes, {
+    scrollPositionRestoration: 'enabled',
+    anchorScrolling: 'enabled',
+  })
+  ],
   exports: [ RouterModule ]
 })
 export class AppRoutingModule {}
