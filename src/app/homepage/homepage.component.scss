@@ -1,6 +1,9 @@
 .parallax {
   /* The image used */
-  background-image: url("../../assets/dublin-city-high.jpg");
+  background: linear-gradient(
+    rgba(20,20,20, .5), 
+    rgba(20,20,20, .5)),
+    url("../../assets/dublin-city-high.jpg");
 
   /* Set a specific height */
   height: 100vh;

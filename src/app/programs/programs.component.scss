@@ -1,0 +1,127 @@
+.container {
+    margin: 0px !important;
+    max-width: 100%;
+}
+
+.programs {
+    div {
+        height: 350px;  
+    }
+
+    .center {
+        color: #fff;
+        position: absolute;
+        left: 0;
+        top: 35%;
+        width: 100%;
+        text-align: center;
+        
+        h3 {
+            font-style: normal !important;
+            font-weight: 800;
+        }
+
+        p {
+            padding: 0px 30px 30px 30px;
+        }
+    }
+
+    
+
+    .kids {
+        background: linear-gradient(
+            rgba(20,20,20, .5), 
+            rgba(20,20,20, .5)),
+            url("../../assets/gb-kids.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;   
+        
+        p {
+            visibility: hidden;
+        }
+        
+    }
+    .kids:hover {
+        background: linear-gradient(
+            rgba(20,20,20, .5), 
+            rgba(20,20,20, .5)),
+            url("../../assets/kids.gif");
+
+        p {
+            visibility: visible;
+        }
+    }
+
+    .adults {
+        background: linear-gradient(
+            rgba(20,20,20, .5), 
+            rgba(20,20,20, .5)),
+            url("../../assets/gb-mens.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        p {
+            visibility: hidden;
+        }
+    }
+    .adults:hover {
+        background: linear-gradient(
+            rgba(20,20,20, .5), 
+            rgba(20,20,20, .5)),
+            url("../../assets/mens.gif");
+
+        p {
+            visibility: visible;
+        }
+    }
+
+    .womens {
+        background: linear-gradient(
+            rgba(20,20,20, .5), 
+            rgba(20,20,20, .5)),
+            url("../../assets/gb-womens.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        p {
+            visibility: hidden;
+        }
+    }
+    .womens:hover {
+        background: linear-gradient(
+            rgba(20,20,20, .5), 
+            rgba(20,20,20, .5)),
+            url("../../assets/womens.gif");
+
+        p {
+            visibility: visible;
+        }
+    }
+
+    .private {
+        background: linear-gradient(
+            rgba(20,20,20, .5), 
+            rgba(20,20,20, .5)),
+            url("../../assets/gb-private.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        p {
+            visibility: hidden;
+        }
+    }
+    .private:hover {
+        background: linear-gradient(
+            rgba(20,20,20, .5), 
+            rgba(20,20,20, .5)),
+            url("../../assets/mens.gif");
+            
+        p {
+            visibility: visible;
+        }
+    }
+}
