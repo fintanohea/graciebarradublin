@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
 
 import { AppRoutingModule } from '../app-routing.module'
-import { Hero }         from '../modals/hero';
+import { Hero }         from '../models/hero';
 import { HeroService }  from '../services/hero-service/hero.service';
 
 @Component({

@@ -20,6 +20,9 @@
         <span class="nav-link" (click)="scroll(programs)">Programs</span>
       </li>
       <li class="nav-item">
+        <span class="nav-link" (click)="scroll(pricing)">Pricing</span>
+      </li>
+      <li class="nav-item">
         <span class="nav-link" (click)="scroll(map)">Location</span>
       </li>
       <li class="nav-item">
@@ -30,6 +33,10 @@
 </nav>
 
 <div id="content">
+  <div #pricing>
+    <app-pricing></app-pricing>
+  </div>
+
   <div #home>
     <div class="parallax animated fadeIn delay-1s">
       <span class="gb-logo"></span>
@@ -47,6 +54,10 @@
   <div #programs>
     <app-programs></app-programs>
   </div>
+
+  <!-- <div #pricing>
+    <app-pricing></app-pricing>
+  </div> -->
   
   <div #map>
     <app-map></app-map>

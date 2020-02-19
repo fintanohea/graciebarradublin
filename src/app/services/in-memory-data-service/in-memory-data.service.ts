@@ -1,6 +1,6 @@
 import { InMemoryDbService } from 'angular-in-memory-web-api';
-import { Hero } from '../../modals/hero';
-import { ContactFormSubmission } from '../../modals/contact-form-submission';
+import { Hero } from '../../models/hero';
+import { ContactFormSubmission } from '../../models/contact-form-submission';
 
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {

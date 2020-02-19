@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
-import { ContactFormSubmission } from '../modals/contact-form-submission';
+import { ContactFormSubmission } from '../models/contact-form-submission';
 import { ContactFormService }  from '../services/contact-form-service/contact-form.service';
 
 @Component({

@@ -22,6 +22,7 @@ import { ContactFormComponent } from './contact-form/contact-form.component';
 import { InstructorComponent } from './instructor/instructor.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { ProgramsComponent } from './programs/programs.component';
+import { PriceCardComponent } from './price-card/price-card.component';
 
 @NgModule({
   imports: [
@@ -51,7 +52,8 @@ import { ProgramsComponent } from './programs/programs.component';
     ContactFormComponent,
     InstructorComponent,
     NavMenuComponent,
-    ProgramsComponent
+    ProgramsComponent,
+    PriceCardComponent
   ],
   bootstrap: [ AppComponent ]
 })
