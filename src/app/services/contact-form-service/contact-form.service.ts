@@ -4,7 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 
-import { ContactFormSubmission } from '../../modals/contact-form-submission';
+import { ContactFormSubmission } from '../../models/contact-form-submission';
 import { MessageService } from '../message-service/message.service';
 
 const httpOptions = {
