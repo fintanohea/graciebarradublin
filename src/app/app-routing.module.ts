@@ -6,6 +6,7 @@ import { HomepageComponent }   from './homepage/homepage.component';
 import { HeroDetailComponent }  from './hero-detail/hero-detail.component';
 import { ContactDetailsComponent } from './contact-details/contact-details.component';
 import { PricingComponent }      from './pricing/pricing.component';
+import { ProgramsDetailedComponent } from './programs-detailed/programs-detailed.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'contact-details', component: ContactDetailsComponent },
   { path: 'pricing', component: PricingComponent },
+  { path: 'programs-detailed', component: ProgramsDetailedComponent },
   { path: 'detail/:id', component: HeroDetailComponent }
 ];
 
