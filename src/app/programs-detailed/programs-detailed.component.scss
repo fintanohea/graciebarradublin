@@ -1,0 +1,38 @@
+.row:nth-child(odd) .detailed-text{
+    background-color: #f4f4f4;
+}
+
+.detailed-bg {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @media only screen and (max-width: 575px) {
+        height: 50vh;
+    }
+
+    &.kids-detailed-picture {
+        background-image: url("../../assets/gb-kids-detailed.jpg");
+        
+    }
+    
+    &.gb1-detailed-picture {
+        background-image: url("../../assets/gb-gb1-detailed.jpg");
+    }
+    
+    &.gb2-detailed-picture {
+        background-image: url("../../assets/gb-gb2-detailed.jpg");
+    }
+    
+    &.womens-detailed-picture {
+        background-image: url("../../assets/gb-womens-detailed.jpg");
+    }
+}
+
+.detailed-text {
+    padding: 25px;
+}
+
+
+
+

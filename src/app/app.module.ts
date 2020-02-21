@@ -23,6 +23,7 @@ import { InstructorComponent } from './instructor/instructor.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { ProgramsComponent } from './programs/programs.component';
 import { PriceCardComponent } from './price-card/price-card.component';
+import { ProgramsDetailedComponent } from './programs-detailed/programs-detailed.component';
 
 @NgModule({
   imports: [
@@ -53,7 +54,8 @@ import { PriceCardComponent } from './price-card/price-card.component';
     InstructorComponent,
     NavMenuComponent,
     ProgramsComponent,
-    PriceCardComponent
+    PriceCardComponent,
+    ProgramsDetailedComponent
   ],
   bootstrap: [ AppComponent ]
 })
