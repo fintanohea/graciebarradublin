@@ -2,6 +2,12 @@
   width: 100vw;
 }
 
+.second-navbar {
+  margin-top: 56px;
+  padding: 0px 0px 0px 63px;
+  font-size: smaller;
+}
+
 .parallax {
   /* The image used */
   background: linear-gradient(
@@ -55,8 +61,4 @@ html {
 	html {
 		scroll-behavior: auto;
 	}
-}
-
-#content {
-  padding-top: 56px;
 }
