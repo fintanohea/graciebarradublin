@@ -12,4 +12,13 @@ export class NavMenuComponent implements OnInit {
   ngOnInit() {
   }
 
+  scroll(el: HTMLElement) {
+    const scrollTo = el.offsetTop - 56;
+
+    window.scrollTo({
+      top: scrollTo,
+      left: 0,
+      behavior: 'smooth'
+    });
+  }
 }

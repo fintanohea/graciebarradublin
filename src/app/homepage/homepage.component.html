@@ -1,7 +1,4 @@
-<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand">
-    <img src="/assets/gb-logo-200x200.png" width="30" height="30" alt="">
-  </a>
+<nav class="second-navbar navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -24,9 +21,6 @@
       </li>
       <li class="nav-item">
         <span class="nav-link" (click)="scroll(map)">Location</span>
-      </li>
-      <li class="nav-item">
-        <span class="nav-link" (click)="scroll(contact)">Contact Us</span>
       </li>
     </ul>
   </div>
@@ -57,10 +51,6 @@
   
   <div #map>
     <app-map></app-map>
-  </div>
-  
-  <div #contact>
-    <app-contact-details></app-contact-details>
   </div>
 </div>
 

@@ -16,7 +16,7 @@ export class HomepageComponent implements AfterViewInit {
   }
 
   scroll(el: HTMLElement) {
-    const scrollTo = el.offsetTop - 56;
+    const scrollTo = el.offsetTop - 91;
 
     window.scrollTo({
       top: scrollTo,
