@@ -9,21 +9,18 @@
 }
 
 .parallax {
-  /* The image used */
+    
   background: linear-gradient(
-    rgba(20,20,20, .5), 
-    rgba(20,20,20, .5)),
-    url("../../assets/dublin-city-high.jpg");
-
-  /* Set a specific height */
-  height: 100vh;
-
-  /* Create the parallax scrolling effect */
+        rgba(221, 221, 221, 0.8), 
+        rgba(221, 221, 221, 0.8)),
+        url("../../assets/bg.jpg");
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
+  background-size: cover;
 
-  position: relative;
+  /* Set a specific height */
+  height: 100vh;
 
   .gb-logo {
     background-image: url("../../assets/gb-logo-everyone.png");
@@ -62,3 +59,64 @@ html {
 		scroll-behavior: auto;
 	}
 }
+
+
+// THIS IS FOR THE DOT NAV START
+.affix-top {
+  top: 32%; 
+	right: 0;
+	position:absolute;
+	z-index:2;
+}
+.affix {
+  top: 50px;
+	right: 0;
+	z-index:2;
+}
+
+.pull-right {
+  position: fixed;
+  right: 20px !important;
+  top: 50%;
+  bottom: auto;
+  transform: translateY(-50%);
+}
+
+
+#dotNav {
+	z-index: 5;
+	right: 7%;
+	padding: 7px;
+	padding-top: 12px;
+}
+#dotNav ul {
+	list-style: none;
+	margin:0;
+}
+#dotNav li {
+	position: relative;
+	background: none repeat scroll 0 0 #cccccc;
+	border:1px solid #aaaaaa;
+	border-radius: 15px 15px 15px 15px;
+	cursor: pointer;
+	height: 12px;
+	margin: 10px 10px 0px 0px;
+	width: 12px;
+	vertical-align:bottom;
+}
+#dotNav li.active {
+	background-color: #ffffff;
+	background-image: -moz-linear-gradient(center top , #FFFFFF, #EEEEEE);
+	background-repeat: repeat-x;
+}
+#dotNav li:hover {
+	background: none repeat scroll 0 0 #EEEEEE;
+}
+#dotNav a {
+	outline: 0;
+	vertical-align:top;
+	margin: 0px 0px 0px 25px;
+	position: relative;
+	top:-5px;
+}
+// THIS IS FOR THE DOT NAV END

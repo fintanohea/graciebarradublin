@@ -1,0 +1,76 @@
+/* You can add global styles to this file, and also import other style files */
+/* Application-wide Styles */
+html, body {
+  font-family: 'Open Sans', sans-serif !important;
+  background-color: #ffffff;
+  color: #444444;
+  padding-top: 28px;
+}
+
+/* Creates an underline animation when you hover element */
+$animate: all 0.2s ease-in-out;
+
+.item-to-underline {
+  .hover {
+    transition: $animate;
+    position: relative;
+    &:before,
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: 2px;
+      width: 0px;
+      height: 1px;
+      margin: 4px 0 0;
+      transition: $animate;
+      transition-duration: 0.35s;
+      opacity: 0;
+      background-color: darken(orange,5%);
+    }
+    &.hover-1 {
+      &:before,
+      &:after {
+        left: 0;
+      }
+    }
+    &.hover-2 {
+      &:before,
+      &:after {
+        right: 0;
+      }
+    }
+    &.hover-3 {
+      &:before {
+        left: 50%;
+      }
+      &:after {
+        right: 50%;
+      }
+    }
+    &.hover-4 {
+      &:before {
+        left: 0;
+      }
+      &:after {
+        right: 0;
+      }
+    }
+  }
+  &:hover {
+    cursor: pointer;
+    .hover {
+      &:before,
+      &:after {
+        width: 100%;
+        opacity: 1;
+      }
+      &.hover-3,
+      &.hover-4 {
+        &:before,
+        &:after {
+          width: 50%;
+        }
+      }
+    }
+  }
+}
