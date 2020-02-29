@@ -11,8 +11,8 @@
 .parallax {
     
   background: linear-gradient(
-        rgba(221, 221, 221, 0.8), 
-        rgba(221, 221, 221, 0.8)),
+        rgba(187, 187, 187, 0.8), 
+        rgba(187, 187, 187, 0.8)),
         url("../../assets/bg.jpg");
   background-attachment: fixed;
   background-position: center;
@@ -76,47 +76,62 @@ html {
 
 .pull-right {
   position: fixed;
-  right: 20px !important;
+  right: 16px !important;
   top: 50%;
   bottom: auto;
   transform: translateY(-50%);
 }
 
-
 #dotNav {
 	z-index: 5;
-	right: 7%;
+	right: 6%;
 	padding: 7px;
 	padding-top: 12px;
+
+  ul {
+    list-style: none;
+    margin:0;
+
+    li {
+      position: relative;
+      background: none repeat scroll 0 0 #cccccc;
+      border:1px solid #aaaaaa;
+      border-radius: 15px 15px 15px 15px;
+      cursor: pointer;
+      height: 18px;
+      margin: 10px 10px 0px 0px;
+      width: 18px;
+      vertical-align:bottom;
+
+      span {
+        // visibility: hidden;
+
+        &:hover {
+          color:pink;
+          visibility: visible;
+          transform: translate3d(42px, -62px, -135px);
+        }
+      }
+    }
+
+    li.active {
+      background-color: #ffffff;
+      background-image: -moz-linear-gradient(center top , #FFFFFF, #EEEEEE);
+      background-repeat: repeat-x;
+    }
+
+    li:hover {
+      background: none repeat scroll 0 0 #EEEEEE;
+    }
+  }
+
+  a {
+    outline: 0;
+    vertical-align:top;
+    margin: 0px 0px 0px 25px;
+    position: relative;
+    top:-5px;
+  }
 }
-#dotNav ul {
-	list-style: none;
-	margin:0;
-}
-#dotNav li {
-	position: relative;
-	background: none repeat scroll 0 0 #cccccc;
-	border:1px solid #aaaaaa;
-	border-radius: 15px 15px 15px 15px;
-	cursor: pointer;
-	height: 12px;
-	margin: 10px 10px 0px 0px;
-	width: 12px;
-	vertical-align:bottom;
-}
-#dotNav li.active {
-	background-color: #ffffff;
-	background-image: -moz-linear-gradient(center top , #FFFFFF, #EEEEEE);
-	background-repeat: repeat-x;
-}
-#dotNav li:hover {
-	background: none repeat scroll 0 0 #EEEEEE;
-}
-#dotNav a {
-	outline: 0;
-	vertical-align:top;
-	margin: 0px 0px 0px 25px;
-	position: relative;
-	top:-5px;
-}
+
 // THIS IS FOR THE DOT NAV END

@@ -1,0 +1,13 @@
+{
+  "serverless": {
+    "provider": "aws",
+    "skipInstall": false,
+    "directory": ".",
+    "project": "gracie-barra-dublin",
+    "clientProject": "gracie-barra-dublin",
+    "serverless": {
+      "aws": {},
+      "gcloud": {}
+    }
+  }
+}

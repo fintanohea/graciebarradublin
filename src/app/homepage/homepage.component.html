@@ -27,12 +27,24 @@
 
   <div data-spy="affix" data-offset-top="100" id="dotNav" class="pull-right">
     <ul>
-        <li title="Welcome" [ngClass]="{'active': selectedNav == home}" (click)="scroll(home)"></li>
-        <li title="About" [ngClass]="{'active': selectedNav == about}" (click)="scroll(about)"></li>
-        <li title="Instructor" [ngClass]="{'active': selectedNav == instructor}" (click)="scroll(instructor)"></li>
-        <li title="Programs" [ngClass]="{'active': selectedNav == programs}" (click)="scroll(programs)"></li>
-        <li title="Pricing" [ngClass]="{'active': selectedNav == pricing}" (click)="scroll(pricing)"></li>
-        <li title="Map" [ngClass]="{'active': selectedNav == map}" (click)="scroll(map)"></li>
+        <li title="Welcome" [ngClass]="{'active': selectedNav == home}" (click)="scroll(home)">
+          <!-- <span>Home</span> -->
+        </li>
+        <li title="About" [ngClass]="{'active': selectedNav == about}" (click)="scroll(about)">
+          <!-- <span>About</span> -->
+        </li>
+        <li title="Instructor" [ngClass]="{'active': selectedNav == instructor}" (click)="scroll(instructor)">
+          <!-- <span>Instructor</span> -->
+        </li>
+        <li title="Programs" [ngClass]="{'active': selectedNav == programs}" (click)="scroll(programs)">
+          <!-- <span>Programs</span> -->
+        </li>
+        <li title="Pricing" [ngClass]="{'active': selectedNav == pricing}" (click)="scroll(pricing)">
+          <!-- <span>Pricing</span> -->
+        </li>
+        <li title="Map" [ngClass]="{'active': selectedNav == map}" (click)="scroll(map)">
+          <!-- <span>Location</span> -->
+        </li>
     </ul>
   </div>
 

@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, ViewChild, HostListener } from '@angular/core';
+import { Component, AfterViewInit, ViewChild, HostListener, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-homepage',
@@ -6,14 +6,14 @@ import { Component, AfterViewInit, ViewChild, HostListener } from '@angular/core
   styleUrls: [ './homepage.component.scss' ]
 })
 export class HomepageComponent implements AfterViewInit {
-  @ViewChild('home', {static: false}) home: HTMLElement;
-  @ViewChild('about', {static: false}) about: HTMLElement;
-  @ViewChild('instructor', {static: false}) instructor: HTMLElement;
-  @ViewChild('programs', {static: false}) programs: HTMLElement;
-  @ViewChild('pricing', {static: false}) pricing: HTMLElement;
-  @ViewChild('map', {static: false}) map: HTMLElement;
-  selectedNav: HTMLElement;
-  navSections: Array<HTMLElement>;
+  @ViewChild('home', {static: false}) home: ElementRef;
+  @ViewChild('about', {static: false}) about: ElementRef;
+  @ViewChild('instructor', {static: false}) instructor: ElementRef;
+  @ViewChild('programs', {static: false}) programs: ElementRef;
+  @ViewChild('pricing', {static: false}) pricing: ElementRef;
+  @ViewChild('map', {static: false}) map: ElementRef;
+  selectedNav: ElementRef;
+  navSections: Array<ElementRef>;
 
   constructor() { }
 
@@ -35,9 +35,9 @@ export class HomepageComponent implements AfterViewInit {
    this.redrawDotNav();
   }
 
-  scroll(el: HTMLElement) {
+  scroll(el) {
     const scrollTo = el.offsetTop - 56;
-    this.selectedNav = el;    
+    this.selectedNav = el;
 
     window.scrollTo({
       top: scrollTo,
@@ -65,7 +65,6 @@ export class HomepageComponent implements AfterViewInit {
         }
       } 
     }
-
   }
 
 }
