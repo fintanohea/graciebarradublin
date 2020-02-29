@@ -7,13 +7,21 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
-      <li class="nav-item" routerLink="/home" routerLinkActive="active" #rla="routerLinkActive">
-          <span class="nav-link">Home <i *ngIf="rla.isActive" class="fa fa-sort-down" aria-hidden="true"></i></span>
+      <li class="nav-item item-to-underline" routerLink="/home" routerLinkActive="active" #rla="routerLinkActive">
+          <!-- <span class="nav-link hover hover-3">Home <i *ngIf="rla.isActive" class="fa fa-sort-down" aria-hidden="true"></i></span> -->
+          <span class="nav-link hover hover-3">Home</span>
       </li>
 
-      <li class="nav-item" routerLink="/programs-detailed" routerLinkActive="active">
-        <span class="nav-link">Program Details</span>
+      <li class="nav-item item-to-underline" routerLink="/programs-detailed" routerLinkActive="active">
+        <span class="nav-link hover hover-3">Program Details</span>
       </li>
     </ul>
   </div>
+
+  <ul class="nav navbar-nav navbar-right social-media-icons">
+    <li><a class="icon icon-lg" href="https://www.facebook.com/graciebarradublinchrisbowe/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+    <li><a class="icon icon-lg" href="http://search.google.com/local/writereview?placeid=ChIJZ_spSmYJZ0gRJV4iR7ZbQrY" target="_blank"><i class="fa fa-google"></i></a></li>
+    <li><a class="icon icon-lg" href="https://www.instagram.com/gracie_barra_dublin/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+    <li><a class="icon icon-lg" href="https://www.youtube.com/channel/UCWGA_QBqpBeob7Gx1hhOqdQ" target="_blank"><i class="fa fa-youtube"></i></a></li>
+  </ul>
 </nav>
