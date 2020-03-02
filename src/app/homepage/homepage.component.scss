@@ -1,3 +1,5 @@
+@import '../constants/constants.scss';
+
 .navbar {
   width: 100vw;
 }
@@ -13,7 +15,7 @@
   background: linear-gradient(
         rgba(187, 187, 187, 0.8), 
         rgba(187, 187, 187, 0.8)),
-        url("../../assets/bg.jpg");
+        url( $cloudfront-url + "bg.jpg" );
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -23,7 +25,7 @@
   height: 100vh;
 
   .gb-logo {
-    background-image: url("../../assets/gb-logo-everyone.png");
+    background-image: url( $cloudfront-url + "gb-logo-everyone.png" );
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -45,7 +47,7 @@
 
 @media only screen and (max-width: 700px) {
   .gb-logo {
-    background-image: url("../../assets/gb-logo.png") !important;
+    background-image: url( $cloudfront-url + "gb-logo.png" ) !important;
     background-size: 50vh !important;
   }
 }

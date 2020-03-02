@@ -1,3 +1,5 @@
+@import '../constants/constants.scss';
+
 .container {
     margin: 0px !important;
     max-width: 100%;
@@ -32,7 +34,7 @@
         background: linear-gradient(
             rgba(20,20,20, .5), 
             rgba(20,20,20, .5)),
-            url("../../assets/gb-kids.jpg");
+            url( $cloudfront-url +  "gb-kids.jpg" );
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;   
@@ -46,7 +48,10 @@
         background: linear-gradient(
             rgba(20,20,20, .5), 
             rgba(20,20,20, .5)),
-            url("../../assets/mens.gif");
+            url( $cloudfront-url +  "kids.gif" );
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
 
         p {
             visibility: visible;
@@ -57,7 +62,7 @@
         background: linear-gradient(
             rgba(20,20,20, .5), 
             rgba(20,20,20, .5)),
-            url("../../assets/gb-mens.jpg");
+            url( $cloudfront-url +  "gb-mens.jpg" );
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -70,7 +75,10 @@
         background: linear-gradient(
             rgba(20,20,20, .5), 
             rgba(20,20,20, .5)),
-            url("../../assets/mens.gif");
+            url( $cloudfront-url + "mens.gif" );
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;    
 
         p {
             visibility: visible;
@@ -81,7 +89,7 @@
         background: linear-gradient(
             rgba(20,20,20, .5), 
             rgba(20,20,20, .5)),
-            url("../../assets/gb-womens.jpg");
+            url( $cloudfront-url + "gb-womens.jpg" );
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -94,7 +102,10 @@
         background: linear-gradient(
             rgba(20,20,20, .5), 
             rgba(20,20,20, .5)),
-            url("../../assets/mens.gif");
+            url( $cloudfront-url + "womens.gif" );
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
 
         p {
             visibility: visible;
@@ -105,7 +116,7 @@
         background: linear-gradient(
             rgba(20,20,20, .5), 
             rgba(20,20,20, .5)),
-            url("../../assets/gb-private.jpg");
+            url( $cloudfront-url + "gb-private.jpg" );
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -118,7 +129,10 @@
         background: linear-gradient(
             rgba(20,20,20, .5), 
             rgba(20,20,20, .5)),
-            url("../../assets/mens.gif");
+            url( $cloudfront-url + "mens.gif" );
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
             
         p {
             visibility: visible;

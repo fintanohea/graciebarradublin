@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppConstants } from '../constants/constants';
 
 @Component({
   selector: 'app-nav-menu',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nav-menu.component.scss']
 })
 export class NavMenuComponent implements OnInit {
+  cloudshare = AppConstants.CLOUDSHARE_ENDPOINT;
 
   constructor() { }
 

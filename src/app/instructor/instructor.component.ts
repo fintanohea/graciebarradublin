@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppConstants } from '../constants/constants';
 
 @Component({
   selector: 'app-instructor',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./instructor.component.scss']
 })
 export class InstructorComponent implements OnInit {
+  cloudshare = AppConstants.CLOUDSHARE_ENDPOINT;
 
   constructor() { }
 
