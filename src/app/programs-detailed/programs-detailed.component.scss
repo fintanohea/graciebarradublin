@@ -1,3 +1,5 @@
+@import '../constants/constants.scss';
+
 .row:nth-child(odd) .detailed-text{
     background-color: #f4f4f4;
 }
@@ -12,20 +14,20 @@
     }
 
     &.kids-detailed-picture {
-        background-image: url("../../assets/gb-kids-detailed.jpg");
+        background-image: url( $cloudfront-url + "gb-kids-detailed.jpg" );
         
     }
     
     &.gb1-detailed-picture {
-        background-image: url("../../assets/gb-gb1-detailed.jpg");
+        background-image: url( $cloudfront-url + "gb-gb1-detailed.jpg" );
     }
     
     &.gb2-detailed-picture {
-        background-image: url("../../assets/gb-gb2-detailed.jpg");
+        background-image: url( $cloudfront-url + "gb-gb2-detailed.jpg" );
     }
     
     &.womens-detailed-picture {
-        background-image: url("../../assets/gb-womens-detailed.jpg");
+        background-image: url( $cloudfront-url + "gb-womens-detailed.jpg" );
     }
 }
 
