@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
+import { ToastrService } from 'ngx-toastr';
 
 import { ContactFormSubmission } from '../models/contact-form-submission';
 import { ContactFormService }  from '../services/contact-form-service/contact-form.service';
@@ -12,7 +13,7 @@ import { ContactFormService }  from '../services/contact-form-service/contact-fo
 })
 export class ContactFormComponent implements OnInit {
   @Input() contactFormSubmission: ContactFormSubmission;
-  contactFormSubmissions: ContactFormSubmission[];
+  cofirmationOfFormSubmission: ContactFormSubmission;
 
   name: string;
   email: string;
@@ -24,11 +25,12 @@ export class ContactFormComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private contactFormService: ContactFormService,
-    private location: Location
+    private location: Location,
+    private toastr: ToastrService
   ) {}
 
   ngOnInit() {
-    this.getcontactFormSubmission();
+    // this.getcontactFormSubmission();
   }
 
   /**
@@ -41,20 +43,35 @@ export class ContactFormComponent implements OnInit {
     this.nomessage = this.message ? false : true;
 
     if (this.name && this.email && this.message) {
-      this.contactFormSubmission = {id: this.getRandomNumber(), name: this.name, email: this.email, message: this.message};
-    
-      this.contactFormService.updateContactFormSubmission(this.contactFormSubmission)
-        .subscribe(() => this.getcontactFormSubmission());
+      this.contactFormSubmission = {
+        recipients: 'fintanohea@gmail.com', 
+        subject: 'Gracie Barra Dublin form submission: ' + this.name, 
+        content: 'Name: ' + this.name + '<br>' + 
+                 'Email: ' + this.email + '<br>' + 
+                 'Message: ' + this.message, 
+        html: 'Name: ' + this.name + '<br>' + 
+              'Email: ' + this.email + '<br>' + 
+              'Message: ' + this.message
+      };
+
+      this.cofirmationOfFormSubmission = {
+        recipients: this.email, 
+        subject: 'Thank you for contacting Gracie Barra Dublin', 
+        content: 'We will get back to you as soon as possible', 
+        html: 'We will get back to you as soon as possible'
+      }
+
+      this.showSuccess();
+      // this.contactFormService.addContactFormSubmission(this.contactFormSubmission)
+      //   .subscribe(() => this.showSuccess());
     }
   }
 
-  getRandomNumber(): number {
-    return Math.floor( (Math.random() * 10) * (Math.random() * 10) );
+  showSuccess() {
+    this.toastr.success('Hello world!', 'Toastr fun!');
+    debugger;
+
   }
 
-  getcontactFormSubmission(): void {
-    this.contactFormService.getContactFormSubmissions()
-    .subscribe(contactFormSubmissions => this.contactFormSubmissions = contactFormSubmissions);
-  }
 
 }

@@ -1,62 +1,61 @@
-<!-- form goes here -->
-<form (ngSubmit)="processForm()">
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <form (ngSubmit)="processForm()">
 
-  <!-- name -->
-  <div class="field">
-    <input 
-      type="text" 
-      name="name" 
-      class="input" 
-      placeholder="Your Name" 
-      [(ngModel)]="name"
-      required
-      minlength="3">
-
-    <div class="help is-error" *ngIf="noname">
-      Name is required and needs to be at least 3 characters long.
+        <!-- name -->
+        <div class="field">
+          <input 
+            type="text" 
+            name="name"
+            [ngClass]="{'is-invalid': noname}"  
+            class="form-control" 
+            placeholder="Your Name" 
+            [(ngModel)]="name"
+            required
+            minlength="3">
+      
+          <div class="help is-error text-danger" *ngIf="noname">
+            Name is required and needs to be at least 3 characters long.
+          </div>
+        </div>
+      
+        <!-- email -->
+        <div class="field">
+          <input 
+            type="email" 
+            name="email" 
+            [ngClass]="{'is-invalid': noemail}"  
+            class="form-control" 
+            placeholder="Your Email" 
+            [(ngModel)]="email"
+            required
+            email>
+      
+          <div class="help is-error" *ngIf="noemail">
+            Email is required and needs to be at least 3 characters long.
+          </div>
+        </div>
+      
+        <!-- message -->
+        <div class="field">
+          <textarea 
+            [ngClass]="{'is-invalid': nomessage}"  
+            class="form-control" 
+            name="message" 
+            placeholder="What's on your mind?" 
+            [(ngModel)]="message"
+            required></textarea>
+          
+          <div class="help is-error" *ngIf="nomessage">
+            Message is required and needs to be at least 3 characters long.
+          </div>
+        </div>
+      
+        <button type="submit" class="btn btn-info">Submit</button>
+      
+      </form>
     </div>
   </div>
+</div>
 
-  <!-- email -->
-  <div class="field">
-    <input 
-      type="email" 
-      name="email" 
-      class="input" 
-      placeholder="Your Email" 
-      [(ngModel)]="email"
-      required
-      email>
-
-    <div class="help is-error" *ngIf="noemail">
-      Email is required and needs to be at least 3 characters long.
-    </div>
-  </div>
-
-  <!-- message -->
-  <div class="field">
-    <textarea 
-      class="textarea" 
-      name="message" 
-      placeholder="What's on your mind?" 
-      [(ngModel)]="message"
-      required></textarea>
-    
-    <div class="help is-error" *ngIf="nomessage">
-      Message is required and needs to be at least 3 characters long.
-    </div>
-  </div>
-
-  <button type="submit" class="button is-danger is-large">Submit</button>
-
-</form>
-
-<ul class="contactFormSubmissions">
-  <li *ngFor="let sub of contactFormSubmissions">
-    <a routerLink="/detail/{{sub.id}}">
-      <span class="badge">{{sub.id}}</span> {{sub.name}}
-    </a>
-    <button class="delete" title="delete sub"
-      (click)="delete(sub)">x</button>
-  </li>
-</ul>
