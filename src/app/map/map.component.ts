@@ -7,7 +7,7 @@ import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 })
 
 export class MapComponent implements AfterViewInit {
-  @ViewChild('mapContainer', {static: false}) gmap: ElementRef;  
+  @ViewChild('mapContainer') gmap: ElementRef;  
   
   map: google.maps.Map;
   lat = 53.2774742;

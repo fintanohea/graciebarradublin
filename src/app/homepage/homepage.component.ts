@@ -6,12 +6,12 @@ import { Component, AfterViewInit, ViewChild, HostListener, ElementRef } from '@
   styleUrls: [ './homepage.component.scss' ]
 })
 export class HomepageComponent implements AfterViewInit {
-  @ViewChild('home', {static: false}) home: ElementRef;
-  @ViewChild('about', {static: false}) about: ElementRef;
-  @ViewChild('instructor', {static: false}) instructor: ElementRef;
-  @ViewChild('programs', {static: false}) programs: ElementRef;
-  @ViewChild('pricing', {static: false}) pricing: ElementRef;
-  @ViewChild('map', {static: false}) map: ElementRef;
+  @ViewChild('home') home: ElementRef;
+  @ViewChild('about') about: ElementRef;
+  @ViewChild('instructor') instructor: ElementRef;
+  @ViewChild('programs') programs: ElementRef;
+  @ViewChild('pricing') pricing: ElementRef;
+  @ViewChild('map') map: ElementRef;
   selectedNav: ElementRef;
   navSections: Array<ElementRef>;
 

@@ -1,7 +1,7 @@
 export class ContactFormSubmission {
-    id: number;
-    name: string;
-    email: string;
-    message: string;
+    recipients: string;
+    subject: string;
+    content: string;
+    html: string;
   }
   
