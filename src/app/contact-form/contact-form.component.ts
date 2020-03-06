@@ -1,7 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Location } from '@angular/common';
-import { ToastrService } from 'ngx-toastr';
+import { Component, OnInit } from '@angular/core';
+import { of } from 'rxjs';
+import { catchError } from 'rxjs/operators';
+
 
 import { ContactFormSubmission } from '../models/contact-form-submission';
 import { ContactFormService }  from '../services/contact-form-service/contact-form.service';
@@ -12,9 +12,7 @@ import { ContactFormService }  from '../services/contact-form-service/contact-fo
   styleUrls: ['./contact-form.component.css']
 })
 export class ContactFormComponent implements OnInit {
-  @Input() contactFormSubmission: ContactFormSubmission;
-  cofirmationOfFormSubmission: ContactFormSubmission;
-
+  contactFormSubmission: ContactFormSubmission;
   name: string;
   email: string;
   message: string;
@@ -23,14 +21,10 @@ export class ContactFormComponent implements OnInit {
   nomessage: boolean;
 
   constructor(
-    private route: ActivatedRoute,
     private contactFormService: ContactFormService,
-    private location: Location,
-    private toastr: ToastrService
   ) {}
 
   ngOnInit() {
-    // this.getcontactFormSubmission();
   }
 
   /**
@@ -54,24 +48,15 @@ export class ContactFormComponent implements OnInit {
               'Message: ' + this.message
       };
 
-      this.cofirmationOfFormSubmission = {
-        recipients: this.email, 
-        subject: 'Thank you for contacting Gracie Barra Dublin', 
-        content: 'We will get back to you as soon as possible', 
-        html: 'We will get back to you as soon as possible'
-      }
-
-      this.showSuccess();
-      // this.contactFormService.addContactFormSubmission(this.contactFormSubmission)
-      //   .subscribe(() => this.showSuccess());
+      this.contactFormService.addContactFormSubmission(this.contactFormSubmission)
+      .pipe(
+        catchError( err => of(err) )
+      )
+      .subscribe(
+        res => console.log('HTTP Response', res),
+        err => console.log('HTTP Error', err),
+        () => console.log('done')
+      );
     }
   }
-
-  showSuccess() {
-    this.toastr.success('Hello world!', 'Toastr fun!');
-    debugger;
-
-  }
-
-
 }
