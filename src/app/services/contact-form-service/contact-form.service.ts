@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { ToastrService } from 'ngx-toastr';
+import { Observable, throwError } from 'rxjs';
+import { catchError, tap } from 'rxjs/operators';
 
-import { Observable, of } from 'rxjs';
-import { catchError, map, tap } from 'rxjs/operators';
-
+import { AppConstants } from '../../constants/constants'
 import { ContactFormSubmission } from '../../models/contact-form-submission';
-import { MessageService } from '../message-service/message.service';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -14,44 +14,38 @@ const httpOptions = {
 @Injectable({ providedIn: 'root' })
 export class ContactFormService {
 
-  private contactFormSubmissionUrl = 'https://foh-email-dispatch.herokuapp.com/api/send';  // URL to web api
+  private contactFormSubmissionUrl = AppConstants.EMAIL_DISPATCH_SEND;
 
   constructor(
     private http: HttpClient,
-    private messageService: MessageService) { }
+    private toastr: ToastrService  
+  ) {}
 
-  //////// Save methods //////////
-
-  /** POST: add a new hero to the server */
+  /** POST: submit contact form to email-dispatch service */
   addContactFormSubmission (contactFormSubmission: ContactFormSubmission): Observable<ContactFormSubmission> {
-    return this.http.post<ContactFormSubmission>(this.contactFormSubmissionUrl, contactFormSubmission, httpOptions).pipe(
-      tap((contactFormSubmission: ContactFormSubmission) => this.log(`added Contact Form Submission`)),
-      catchError(this.handleError<ContactFormSubmission>('addContactFormSubmission'))
-    );
+    const http$ = this.http.post<ContactFormSubmission>(
+                    this.contactFormSubmissionUrl, 
+                    contactFormSubmission, 
+                    httpOptions
+                  );
+                  
+    return http$.pipe(
+      tap(_ => { 
+        console.log(`Sent email: "${contactFormSubmission.content}"`);
+        this.showToastrSuccess('Form Submitted'); 
+      }),
+      catchError(err => {
+          this.showToastrError(err.statusText);
+          return throwError(err);
+      })
+    );     
   }
 
-  /**
-   * Handle Http operation that failed.
-   * Let the app continue.
-   * @param operation - name of the operation that failed
-   * @param result - optional value to return as the observable result
-   */
-  private handleError<T> (operation = 'operation', result?: T) {
-    return (error: any): Observable<T> => {
-
-      // TODO: send the error to remote logging infrastructure
-      console.error(error); // log to console instead
-
-      // TODO: better job of transforming error for user consumption
-      this.log(`${operation} failed: ${error.message}`);
-
-      // Let the app keep running by returning an empty result.
-      return of(result as T);
-    };
+  showToastrError(err: any) {
+    this.toastr.error(err);
   }
 
-  /** Log a HeroService message with the MessageService */
-  private log(message: string) {
-    this.messageService.add(`ContactFormService: ${message}`);
+  showToastrSuccess(message: any ) {
+    this.toastr.success(message);
   }
 }
