@@ -1,6 +1,6 @@
-<div class="container-fluid">
+<div class="container-fluid form-container">
   <div class="row justify-content-center">
-    <div class="col-md-6">
+    <div class="col-md-12">
       <form (ngSubmit)="processForm()">
 
         <!-- name -->
@@ -16,7 +16,7 @@
             minlength="3">
       
           <div class="help is-error text-danger" *ngIf="noname">
-            Name is required and needs to be at least 3 characters long.
+            Name must be at least 3 characters long.
           </div>
         </div>
       
@@ -32,8 +32,8 @@
             required
             email>
       
-          <div class="help is-error" *ngIf="noemail">
-            Email is required and needs to be at least 3 characters long.
+          <div class="help is-error text-danger" *ngIf="noemail">
+            Please enter a valid email.
           </div>
         </div>
       
@@ -47,12 +47,17 @@
             [(ngModel)]="message"
             required></textarea>
           
-          <div class="help is-error" *ngIf="nomessage">
-            Message is required and needs to be at least 3 characters long.
+          <div class="help is-error text-danger" *ngIf="nomessage">
+            Please enter your message.
           </div>
         </div>
       
-        <button type="submit" class="btn btn-info">Submit</button>
+        <button 
+          type="submit" 
+          class="btn btn-info" 
+          [disabled]="submittingForm">
+          Submit
+        </button>
       
       </form>
     </div>

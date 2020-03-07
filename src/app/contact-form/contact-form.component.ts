@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
-
+import { AppConstants } from '../constants/constants';
 import { ContactFormSubmission } from '../models/contact-form-submission';
 import { ContactFormService }  from '../services/contact-form-service/contact-form.service';
 
@@ -19,6 +19,7 @@ export class ContactFormComponent implements OnInit {
   noname: boolean;
   noemail: boolean;
   nomessage: boolean;
+  submittingForm: boolean = false;
 
   constructor(
     private contactFormService: ContactFormService,
@@ -37,8 +38,10 @@ export class ContactFormComponent implements OnInit {
     this.nomessage = this.message ? false : true;
 
     if (this.name && this.email && this.message) {
+      this.submittingForm = true;
+
       this.contactFormSubmission = {
-        recipients: 'fintanohea@gmail.com', 
+        recipients: AppConstants.CONTACT_EMAIL, 
         subject: 'Gracie Barra Dublin form submission: ' + this.name, 
         content: 'Name: ' + this.name + '<br>' + 
                  'Email: ' + this.email + '<br>' + 
@@ -55,7 +58,7 @@ export class ContactFormComponent implements OnInit {
       .subscribe(
         res => console.log('HTTP Response', res),
         err => console.log('HTTP Error', err),
-        () => console.log('done')
+        () => this.submittingForm = false
       );
     }
   }
