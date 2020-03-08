@@ -1,5 +1,9 @@
-<div class="container">
-  <div class="pricing card-deck mb-3 text-center d-flex justify-content-around">
-    <app-price-card *ngFor='let pricecard of pricecards' [pricecard]="pricecard"></app-price-card>
+<div class="container m-4 mx-auto">
+  <div class="row d-flex justify-content-center">
+    <app-price-card 
+      class="col text-center"
+      *ngFor='let pricecard of pricecards;'
+      [pricecard]="pricecard">
+    </app-price-card>
   </div>
 </div>
