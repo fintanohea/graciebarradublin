@@ -69,19 +69,13 @@ export class PricingComponent implements OnInit {
     details: [],
     button: "More Details"
   };
-
   
-
   public pricecards: Array<PriceCard> = [
     this.adultcard,
-    this.studentcard,
-    this.juvenilecard,
-    this.kidsteenscard,
     this.yogacard,
-    this.combocard,
-    this.ladiescard,
+    this.combocard
   ];
-
+  
   constructor(
   ) {}
 
