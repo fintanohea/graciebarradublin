@@ -28,26 +28,34 @@ export class ContactFormComponent implements OnInit {
    * Only alerting for now
    */
   processForm(form: NgForm) {
-    this.submittingForm = true;
-    this.contactFormSubmission = {
-      recipients: AppConstants.CONTACT_EMAIL, 
-      subject: 'Gracie Barra Dublin form submission: ' + form.value.name, 
-      content: 'Name: ' + form.value.name + '<br>' + 
-                'Email: ' + form.value.email + '<br>' + 
-                'Message: ' + form.value.message, 
-      html: 'Name: ' + form.value.name + '<br>' + 
-            'Email: ' + form.value.email + '<br>' + 
-            'Message: ' + form.value.message
-    };
-
-    this.contactFormService.addContactFormSubmission(this.contactFormSubmission)
-    .pipe(
-      catchError( err => of(err) )
-    )
-    .subscribe(
-      res => console.log('HTTP Response', res),
-      err => console.log('HTTP Error', err),
-      () => this.submittingForm = false
-    );
+    if (form.value.name && form.value.email && form.value.message) {
+      this.submittingForm = true;
+      // this.contactFormSubmission = {
+      //   recipients: AppConstants.CONTACT_EMAIL, 
+      //   subject: 'Gracie Barra Dublin form submission: ' + form.value.name, 
+      //   content: 'Name: ' + form.value.name + '<br>' + 
+      //             'Email: ' + form.value.email + '<br>' + 
+      //             'Message: ' + form.value.message, 
+      //   html: 'Name: ' + form.value.name + '<br>' + 
+      //         'Email: ' + form.value.email + '<br>' + 
+      //         'Message: ' + form.value.message
+      // };
+      this.contactFormSubmission = {
+        recipients: '', 
+        subject: '', 
+        content: '', 
+        html: ''
+      };
+  
+      this.contactFormService.addContactFormSubmission(this.contactFormSubmission)
+      .pipe(
+        catchError( err => of(err) )
+      )
+      .subscribe(
+        res => console.log('HTTP Response', res),
+        err => console.log('HTTP Error', err),
+        () => this.submittingForm = false
+      );
+    }
   }
 }

@@ -30,13 +30,13 @@ export class ContactFormService {
                   );
                   
     return http$.pipe(
-      tap(_ => { 
-        console.log(`Sent email: "${contactFormSubmission.content}"`);
-        this.showToastrSuccess('Form Submitted'); 
-      }),
+      tap(_ => this.showToastrSuccess('Form Submitted')),
       catchError(err => {
-          this.showToastrError(err.statusText);
-          return throwError(err);
+        err.error.errors.forEach(e => {
+          this.showToastrError(e.msg);
+        });
+        this.showToastrError(err.statusText);
+        return throwError(err);
       })
     );     
   }
