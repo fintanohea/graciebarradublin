@@ -1,22 +1,35 @@
 <div class="container-fluid form-container">
   <div class="row justify-content-center">
     <div class="col-md-12">
-      <form (ngSubmit)="processForm()">
+      <form (ngSubmit)="processForm(contactForm)"
+            #contactForm="ngForm"
+            class="form-group">
 
         <!-- name -->
         <div class="field">
           <input 
             type="text" 
             name="name"
-            [ngClass]="{'is-invalid': noname}"  
+            ngModel
+            #name="ngModel"
+            [ngClass]="{'is-invalid': name.invalid && (name.dirty || name.touched)}"  
             class="form-control" 
             placeholder="Your Name" 
-            [(ngModel)]="name"
-            required
-            minlength="3">
+            minlength="3"
+            maxlength="30"
+            required>
       
-          <div class="help is-error text-danger" *ngIf="noname">
-            Name must be at least 3 characters long.
+          <div *ngIf="name.invalid && (name.dirty || name.touched)"
+               class="help is-error text-danger">
+            <small *ngIf="name.errors.required">
+              Name is required.
+            </small>
+            <small *ngIf="name.errors.minlength">
+              Name cannot be more than 30 characters long.
+            </small>
+            <small *ngIf="name.errors.minlength">
+              Name must be at least 3 characters long.
+            </small>
           </div>
         </div>
       
@@ -25,30 +38,42 @@
           <input 
             type="email" 
             name="email" 
-            [ngClass]="{'is-invalid': noemail}"  
+            [ngClass]="{'is-invalid': email.invalid && (email.dirty || email.touched)}"  
             class="form-control" 
             placeholder="Your Email" 
-            [(ngModel)]="email"
+            ngModel
+            #email="ngModel"
+            pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
             required
             email>
       
-          <div class="help is-error text-danger" *ngIf="noemail">
-            Please enter a valid email.
+          <div *ngIf="email.invalid && (email.dirty || email.touched)"
+               class="help is-error text-danger">
+            <small *ngIf="email.errors.required">
+              Email is required.
+            </small>
+            <small *ngIf="email.errors.pattern">
+              Please provide a valid email address
+            </small>
           </div>
         </div>
       
         <!-- message -->
         <div class="field">
           <textarea 
-            [ngClass]="{'is-invalid': nomessage}"  
+            [ngClass]="{'is-invalid': message.invalid && (message.dirty || message.touched)}"  
             class="form-control" 
             name="message" 
             placeholder="What's on your mind?" 
-            [(ngModel)]="message"
+            ngModel
+            #message="ngModel"
             required></textarea>
           
-          <div class="help is-error text-danger" *ngIf="nomessage">
-            Please enter your message.
+          <div *ngIf="message.invalid && (message.dirty || message.touched)"
+            class="help is-error text-danger">
+            <small *ngIf="message.errors.required">
+              Message is required.
+            </small>
           </div>
         </div>
       
