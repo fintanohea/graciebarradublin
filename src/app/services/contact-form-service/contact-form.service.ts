@@ -22,20 +22,27 @@ export class ContactFormService {
   ) {}
 
   /** POST: submit contact form to email-dispatch service */
-  addContactFormSubmission (contactFormSubmission: ContactFormSubmission): Observable<ContactFormSubmission> {
-    const http$ = this.http.post<ContactFormSubmission>(
+  addContactFormSubmission (contactFormSubmission: ContactFormSubmission): Observable<any> {
+    const http$ = this.http.post<any>(
                     this.contactFormSubmissionUrl, 
                     contactFormSubmission, 
                     httpOptions
                   );
                   
     return http$.pipe(
-      tap(_ => this.showToastrSuccess('Form Submitted')),
+      tap(res => {
+        res.confirmation === 'fail' ? 
+          this.showToastrError(res.message.message) : 
+          this.showToastrSuccess(res.message);
+      }),
       catchError(err => {
-        err.error.errors.forEach(e => {
-          this.showToastrError(e.msg);
-        });
-        this.showToastrError(err.statusText);
+        if(err.error.errors) {
+          err.error.errors.forEach(e => {
+            this.showToastrError(e.msg);
+          });
+        }
+        err.statusText ? this.showToastrError(err.statusText) : this.showToastrError('Unknown Error');
+        
         return throwError(err);
       })
     );     
