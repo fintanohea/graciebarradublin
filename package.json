@@ -21,7 +21,7 @@
   },
   "private": true,
   "dependencies": {
-    "@angular-devkit/build-angular": "^0.900.5",
+    "@angular-devkit/build-angular": "^15.0.4",
     "@angular/animations": "^9.0.5",
     "@angular/cdk": "^9.1.1",
     "@angular/common": "^9.0.5",
@@ -71,10 +71,10 @@
     "serverless": "1.40.0",
     "serverless-apigw-binary": "^0.4.4",
     "serverless-domain-manager": "^3.3.1",
-    "ts-loader": "4.2.0",
+    "ts-loader": "9.4.2",
     "ts-node": "~7.0.0",
     "tslint": "~5.11.0",
     "typescript": "~3.7.5",
-    "webpack-cli": "3.3.11"
+    "webpack-cli": "5.0.1"
   }
 }
